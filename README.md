@@ -30,4 +30,7 @@ Player has to click start, be directed to the shuffled cards facing down then fi
 
  
 ## Stretch Goals 
-* Make an option for some kind of level 
+* Make an option for some kind of level
+
+## Potential Roadblocks
+Problem solving and converting ideas into code
