@@ -14,11 +14,11 @@ Player has to click start, be directed to the shuffled cards facing down then fi
 
  
 ## WireFrames 
-![WireFrame1] (img/start-memorygame.png) 
-![WireFrame2] (img/afterclick-memorygame.png) 
-![WireFrame3] (img/scoreup-memorygame.png) 
-![WireFrame4] (img/youlost-memorygame.png) 
-![WireFrame5] (img/youwin-memorygame.png) 
+![WireFrame1](img/start-memorygame.png) 
+![WireFrame2](img/afterclick-memorygame.png) 
+![WireFrame3](img/scoreup-memorygame.png) 
+![WireFrame4](img/youlost-memorygame.png) 
+![WireFrame5](img/youwin-memorygame.png) 
 
  
 ## MVP 
