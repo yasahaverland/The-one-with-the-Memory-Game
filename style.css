@@ -1,0 +1,10 @@
+#grid {
+    width: 30cm;
+    height: 350px;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 250px 135px 50px 135px;
+
+}
