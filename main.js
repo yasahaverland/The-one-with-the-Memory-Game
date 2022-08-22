@@ -124,3 +124,34 @@ function flipCard() {
     }
     console.log(cardsChosen)
 }
+
+// Timer Logic
+const timerMin = document.querySelector('.timer-min')
+const timerSec = document.querySelector('.timer-seconds')
+const startBtn = document.querySelector('.start')
+
+this.el = {
+    timerMin, timerSec
+}
+
+this.interval = null
+this.remainingSeconds = 90
+
+this.updateInterface()
+
+// start button click
+this.el.control.addEventListener('click', () => {
+
+})
+
+function updateInterface() {
+    const minutes = Math.floor(this.remainingSeconds / 60)
+    const seconds = this.remainingSeconds % 60
+    // makes the timer have 2 values (00 or 01) at all times
+    this.el.minutes.textContent = minutes.toString().padStart(2, "0")
+    this.el.seconds.textContent = seconds.toString().padStart(2, "0")
+}
+
+// if timer goes to 0 display (timesup + winner/looser) screen
+
+
