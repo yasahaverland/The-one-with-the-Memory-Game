@@ -56,18 +56,71 @@ const cardArray = [
         img:'img/Slice 2.png'
     }
 ]
-
+// sort the card every time page is refreshed
 cardArray.sort(() => 0.5 - Math.random())
- 
-const gridDisplay = document.querySelector('#grid')
 
+// referencing the html document (div) I want to append my pictures at
+const gridDisplay = document.querySelector('#grid')
+let cardsChosen = []
+let cardsChosenIds = []
+const cardsWon = []
+const score = document.querySelector('#result')
+
+// create card board and all make the cards imgs appear
 function createBoard () {
     for (let i = 0; i < cardArray.length; i++) {
         const card = document.createElement('img')
         card.setAttribute('src', 'img/backcard.png')
         card.setAttribute('data-id', i)
+        card.addEventListener('click', flipCard)
         gridDisplay.append(card)
-        console.log(card, i)
+        
     }
 }
 createBoard()
+// checkMatch()
+
+function checkMatch() {
+    const cards = document.querySelectorAll('#grid img')
+    const opitionOneId = cardsChosenIds[0]
+    const opitionTwoId = cardsChosenIds[1]
+    
+    if (opitionOneId == opitionTwoId) {
+        cards[opitionOneId].setAttribute('src', 'img/backcard.png')
+        cards[opitionTwoId].setAttribute('src', 'img/backcard.png')
+    }
+    if (cardsChosen[0] == cardsChosen[1]) {
+        // play sound from the matching cards
+        cards[opitionOneId].setAttribute('src', 'img/blank.png')
+        cards[opitionTwoId].setAttribute('src', 'img/blank.png')
+        cards[opitionOneId].removeEventListener('click', flipCard)
+        cards[opitionTwoId].removeEventListener('click', flipCard)  
+        cardsWon.push(cardsChosen)      
+    } else {
+        cards[opitionOneId].setAttribute('src', 'img/backcard.png')
+        cards[opitionTwoId].setAttribute('src', 'img/backcard.png')
+    }
+    
+    score.innerText = cardsWon.length
+    cardsChosen = []
+    cardsChosenIds = []
+
+    if (cardsWon.length == (cardArray.length/2)){
+        score.innerText = 'Congratulations! You won the GellerCup!'
+    }
+
+}
+
+// flip cars when clicked, switching images from backcard to their front
+function flipCard() {
+    // this is letting us interect with any element we click on
+    const cardId = this.getAttribute('data-id')
+    cardsChosen.push(cardArray[cardId].name)
+    cardsChosenIds.push(cardId)
+    this.setAttribute('src',cardArray[cardId].img)
+    //logic to only display 2 cards at the time then check for a match
+    if (cardsChosen.length == 2) {
+        setTimeout(checkMatch, 500)
+    }
+    console.log(cardsChosen)
+}

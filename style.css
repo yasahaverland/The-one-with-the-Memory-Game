@@ -4,7 +4,6 @@
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    margin: 250px 135px 50px 135px;
-
+    justify-content: space-around;
+    margin: 200px 135px 50px 135px;
 }
