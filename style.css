@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
 #grid {
     width: 30cm;
     height: 350px;
@@ -6,4 +8,23 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 200px 135px 50px 135px;
+}
+.screen2 {
+    display: none;
+}
+.screen1 {
+    display: flex;
+
+    /* margin: 10px 300px 0px 380px; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+p {
+   text-align: center;
+   font-family: 'Roboto Mono', monospace;
+   font-size: x-large;
+   margin: 10px 30px 70px 10px;
+
+    
 }

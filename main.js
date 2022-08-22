@@ -126,32 +126,55 @@ function flipCard() {
 }
 
 // Timer Logic
-const timerMin = document.querySelector('.timer-min')
-const timerSec = document.querySelector('.timer-seconds')
+const minutes = document.querySelector('.timer-min')
+const seconds = document.querySelector('.timer-seconds')
 const startBtn = document.querySelector('.start')
 
 this.el = {
-    timerMin, timerSec
+    minutes, seconds
 }
 
 this.interval = null
-this.remainingSeconds = 90
+this.remainingSeconds = 30
 
 this.updateInterface()
 
 // start button click
-this.el.control.addEventListener('click', () => {
-
+startBtn.addEventListener("click", () => {
+    if (this.interval === null) {
+        this.start()
+    } else {
+        this.stop()
+    }
 })
 
 function updateInterface() {
     const minutes = Math.floor(this.remainingSeconds / 60)
     const seconds = this.remainingSeconds % 60
     // makes the timer have 2 values (00 or 01) at all times
-    this.el.minutes.textContent = minutes.toString().padStart(2, "0")
-    this.el.seconds.textContent = seconds.toString().padStart(2, "0")
+    this.el.minutes.innerText = minutes.toString().padStart(2, "0")
+    this.el.seconds.innerText = seconds.toString().padStart(2, "0")
 }
+function start() {
+    if (this.remainingSeconds === 0) return
 
+    this.interval = setInterval(() => {
+        this.remainingSeconds--
+        this.updateInterface()
+
+        if (this.remainingSeconds === 0) {
+            this.stop()
+        }
+
+    }, 1000)
+}
 // if timer goes to 0 display (timesup + winner/looser) screen
+function stop() {
+    
+        clearInterval(this.interval)
+        this.interval = null
+        this.updateInterface()
+
+}
 
 
