@@ -11,6 +11,13 @@
 }
 .screen2 {
     display: none;
+    width: 30cm;
+    height: 350px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 200px 135px 50px 135px;
+
 }
 .screen1 {
     display: flex;
@@ -20,11 +27,27 @@
     justify-content: space-around;
     align-items: center;
 }
+.img-door {
+    position: relative;
+    width:50%;
+}
+.img-door .start-btn-s1 {
+    position:absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(131, 109, 175);
+    color: rgb(182, 151, 87);
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: 2px solid rgb(182, 151, 87);
+    cursor: pointer;
+
+}
 p {
    text-align: center;
    font-family: 'Roboto Mono', monospace;
    font-size: x-large;
    margin: 10px 30px 70px 10px;
 
-    
 }

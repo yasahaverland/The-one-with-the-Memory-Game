@@ -1,3 +1,18 @@
+// when start button on screen one is clicked, screen2 is displayed
+const screen1 = document.querySelector(".screen1")
+const screen2 = document.querySelector(".screen2")
+const startButtonS1 = document.querySelector(".start-btn-s1")
+
+
+function switchScreens () {
+    screen1.setAttribute("style", `display: none`)
+    screen2.setAttribute("style", `display: flex`)
+}
+displayScreens()
+
+function displayScreens () {
+    startButtonS1.addEventListener("click", switchScreens)
+}
 const cardArray = [
     {
         name: 'monica',
@@ -54,7 +69,12 @@ const cardArray = [
     {
         name:'janice',
         img:'img/Slice 2.png'
+    },
+    {
+        name:'chicken',
+        img:'img/Slice 4.png'
     }
+
 ]
 // sort the card every time page is refreshed
 cardArray.sort(() => 0.5 - Math.random())
@@ -72,7 +92,7 @@ function createBoard () {
         const card = document.createElement('img')
         card.setAttribute('src', 'img/backcard.png')
         card.setAttribute('data-id', i)
-        card.addEventListener('click', flipCard)
+        card.addEventListener('click',flipCard)
         gridDisplay.append(card)
         
     }
@@ -81,10 +101,11 @@ createBoard()
 // checkMatch()
 
 function checkMatch() {
+
     const cards = document.querySelectorAll('#grid img')
     const opitionOneId = cardsChosenIds[0]
     const opitionTwoId = cardsChosenIds[1]
-    
+
     if (opitionOneId == opitionTwoId) {
         cards[opitionOneId].setAttribute('src', 'img/backcard.png')
         cards[opitionTwoId].setAttribute('src', 'img/backcard.png')
@@ -140,13 +161,17 @@ this.remainingSeconds = 30
 this.updateInterface()
 
 // start button click
-startBtn.addEventListener("click", () => {
-    if (this.interval === null) {
+gridDisplay.addEventListener('click', startTimer)
+function startTimer() {
+
+     if (this.interval === null) {
         this.start()
     } else {
         this.stop()
-    }
-})
+    } 
+}
+   
+   
 
 function updateInterface() {
     const minutes = Math.floor(this.remainingSeconds / 60)
