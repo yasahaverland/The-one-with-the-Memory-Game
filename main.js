@@ -1,8 +1,72 @@
 // when start button on screen one is clicked, screen2 is displayed
 const screen1 = document.querySelector(".screen1")
 const screen2 = document.querySelector(".screen2")
-const startButtonS1 = document.querySelector(".start-btn-s1")
+const screen3 = document.querySelector(".screen3")
+const screen4 = document.querySelector(".screen4")
+const door = document.querySelector(".img-door")
 
+// Timer Logic
+const minutes = document.querySelector('.timer-min')
+const seconds = document.querySelector('.timer-seconds')
+const startBtn = document.querySelector('.start')
+
+this.el = {
+    minutes, seconds
+}
+
+this.interval = null
+this.remainingSeconds = 30
+
+this.updateInterface()
+
+// start button click
+startBtn.addEventListener('click', () => {
+
+     if (this.interval === null) {
+        this.start()
+    } else {
+        this.stop()
+    } 
+})
+   
+
+function updateInterface() {
+    const minutes = Math.floor(this.remainingSeconds / 60)
+    const seconds = this.remainingSeconds % 60
+    // makes the timer have 2 values (00 or 01) at all times
+    this.el.minutes.innerText = minutes.toString().padStart(2, "0")
+    this.el.seconds.innerText = seconds.toString().padStart(2, "0")
+}
+function start() {
+
+    if (this.remainingSeconds === 0) return
+
+    this.interval = setInterval(() => {
+        this.remainingSeconds--
+        this.updateInterface()
+
+        if (this.remainingSeconds === 0) {
+            this.stop()
+        }
+
+    }, 1000)
+}
+// if timer goes to 0 display (timesup + winner/looser) screen
+function stop() {
+
+        clearInterval(this.interval)
+        this.interval = null
+        this.updateInterface()
+        if (remainingSeconds === 0 && cardsWon.length < (cardArray.length/2)) {
+            screen2.setAttribute("style", `display: none`)
+            screen3.setAttribute("style", `display: flex`)
+        }
+        if (remainingSeconds === 0 && cardsWon.length == (cardArray.length/2)) {
+            screen2.setAttribute("style", `display: none`)
+            screen4.setAttribute("style", `display: flex`)
+        }
+
+}
 
 function switchScreens () {
     screen1.setAttribute("style", `display: none`)
@@ -11,7 +75,7 @@ function switchScreens () {
 displayScreens()
 
 function displayScreens () {
-    startButtonS1.addEventListener("click", switchScreens)
+    door.addEventListener("click", switchScreens)
 }
 const cardArray = [
     {
@@ -69,10 +133,6 @@ const cardArray = [
     {
         name:'janice',
         img:'img/Slice 2.png'
-    },
-    {
-        name:'chicken',
-        img:'img/Slice 4.png'
     }
 
 ]
@@ -126,9 +186,9 @@ function checkMatch() {
     cardsChosen = []
     cardsChosenIds = []
 
-    if (cardsWon.length == (cardArray.length/2)){
-        score.innerText = 'Congratulations! You won the GellerCup!'
-    }
+    // if (cardsWon.length == (cardArray.length/2)){
+    //     score.innerText = 'Congratulations! You won the GellerCup!'
+    // }
 
 }
 
@@ -146,60 +206,6 @@ function flipCard() {
     console.log(cardsChosen)
 }
 
-// Timer Logic
-const minutes = document.querySelector('.timer-min')
-const seconds = document.querySelector('.timer-seconds')
-const startBtn = document.querySelector('.start')
 
-this.el = {
-    minutes, seconds
-}
-
-this.interval = null
-this.remainingSeconds = 30
-
-this.updateInterface()
-
-// start button click
-gridDisplay.addEventListener('click', startTimer)
-function startTimer() {
-
-     if (this.interval === null) {
-        this.start()
-    } else {
-        this.stop()
-    } 
-}
-   
-   
-
-function updateInterface() {
-    const minutes = Math.floor(this.remainingSeconds / 60)
-    const seconds = this.remainingSeconds % 60
-    // makes the timer have 2 values (00 or 01) at all times
-    this.el.minutes.innerText = minutes.toString().padStart(2, "0")
-    this.el.seconds.innerText = seconds.toString().padStart(2, "0")
-}
-function start() {
-    if (this.remainingSeconds === 0) return
-
-    this.interval = setInterval(() => {
-        this.remainingSeconds--
-        this.updateInterface()
-
-        if (this.remainingSeconds === 0) {
-            this.stop()
-        }
-
-    }, 1000)
-}
-// if timer goes to 0 display (timesup + winner/looser) screen
-function stop() {
-    
-        clearInterval(this.interval)
-        this.interval = null
-        this.updateInterface()
-
-}
 
 

@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
-
-#grid {
-    width: 30cm;
-    height: 350px;
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 200px 135px 50px 135px;
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+body {
+    background-image: url("img/brick-wall.jpg");
+    
 }
-.screen2 {
-    display: none;
-    width: 30cm;
-    height: 350px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 200px 135px 50px 135px;
-
-}
+/* screen 1 - Main screen */
 .screen1 {
     display: flex;
-
+    margin: -5px;
     /* margin: 10px 300px 0px 380px; */
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+}
+.intro{
+    margin: -50px;
+    background-color: rgba(151, 128, 161, 0.3);
+    width: 70vw;
+    padding: 10px;
+    font-weight:bold;
+}
+p {
+   text-align: center;
+   font-family: 'Roboto Mono', monospace;
+   font-size: 30px;
+   margin: 10px 30px 70px 10px;
+
 }
 .img-door {
     position: relative;
@@ -44,10 +44,77 @@
     cursor: pointer;
 
 }
-p {
-   text-align: center;
-   font-family: 'Roboto Mono', monospace;
-   font-size: x-large;
-   margin: 10px 30px 70px 10px;
+
+
+/* screen 2 - actual game screen */
+.screen2 {
+    display: none;
+    width: 30cm;
+    height: 350px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 135px 50px 135px;
 
 }
+h3 {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 100px;
+    margin: 30px;
+    color: rgb(255, 208, 11)
+}
+.timer {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 150px;
+    color: rgb(255, 208, 11);
+    display: inline-block;
+}
+.start {
+    display: flex;
+    height: 50px;
+    width: 100px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: large;
+    padding: 10px 0px 10px 25px;
+    background-color: rgb(255, 208, 11);
+    color: rgb(131, 109, 175);
+    float: inline-start;
+
+}
+#grid {
+    height: 60vh;
+    width: 50cm;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* screen 3 - when times is up and the player lost */
+.screen3 {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    margin: 10px 40px 10px 400px;
+}
+.lose {
+    display: flex;
+    margin: 10px 40px 10px 100px;
+}
+/* screen 4 - when time is up and player won */
+.screen4 {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    margin: 0;
+}
+.win {
+    display: flex;
+    margin: 10px 100px 10px 10px;
+}
+
+
