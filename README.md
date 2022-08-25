@@ -5,6 +5,8 @@ Find the all the matches before the timer goes up!
 ## About the game: 
 Player has to click on the door to enter the game. The always shuffled in random order cards facing down that reveals memorable scenes from your favorite Friend's characters when clicked. Getting into the Monica mindset, it's all or nothing in this game, either you find ALL the matches before the time is up or you lose.
 
+## Link to the game page
+https://yasahaverland.github.io/The-one-with-the-Memory-Game/
  
 ## Tech Being Used 
 * HTML/CSS  
