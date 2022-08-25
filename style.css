@@ -123,15 +123,17 @@ audio {
 }
 /* screen 4 - when time is up and player won */
 .screen4 {
-    display: none;
+
+    display:none;
     flex-direction: column;
     align-content: center;
     justify-content: space-around;
-    margin: 0;
+    margin: 10px 40px 10px 400px;
 }
+
 .win {
     display: flex;
-    margin: 10px 100px 10px 10px;
+    margin: 10px 100px 400px 10px;
 }
 
 

@@ -16,7 +16,7 @@ this.el = {
 }
 
 this.interval = null
-this.remainingSeconds = 43
+this.remainingSeconds = 40
 
 this.updateInterface()
 
