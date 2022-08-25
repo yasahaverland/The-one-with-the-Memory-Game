@@ -124,12 +124,12 @@ audio {
     flex-direction: column;
     align-content: center;
     justify-content: space-around;
-    margin: 10px 40px 10px 400px;
+    margin: 10px 50px 10px 300px;
 }
 
 .win {
 
-    margin: 100px 100px 400px 10px;
+    margin: 90px 100px 400px 10px;
 }
 
 
