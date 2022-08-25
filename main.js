@@ -171,9 +171,11 @@ function checkMatch() {
     const optionOneId = cardsChosenIds[0]
     const optionTwoId = cardsChosenIds[1]
 
-    if (optionOneId == optionTwoId) {
+    if (optionOneId === optionTwoId) {
+
         cards[optionOneId].setAttribute('src', './img/backcard.png')
         cards[optionTwoId].setAttribute('src', './img/backcard.png')
+
     }
     if (cardsChosen[0] == cardsChosen[1]) {
         // play sound from the matching cards
