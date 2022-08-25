@@ -134,7 +134,7 @@ audio {
 .win {
 
     display: flex;
-    position: absolute;
+    justify-content: center;
     margin: 400px 100px 400px 10px;
 }
 
