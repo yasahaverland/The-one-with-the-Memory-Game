@@ -67,6 +67,7 @@ function stop() {
             screen2.setAttribute("style", `display: none`)
             screen4.setAttribute("style", `display: flex`)
         }
+        audio.pause()
 
 }
 // SWITCH SCREENS logic
@@ -209,7 +210,10 @@ function flipCard() {
     }
     console.log(cardsChosen)
 }
-
+// confetti
+const confettiSettings = { target: 'my-canvas' };
+const confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
 
 
 

@@ -130,10 +130,17 @@ audio {
     justify-content: space-around;
     margin: 10px 40px 10px 400px;
 }
+.confetti {
+    display: flex;
+
+}
 
 .win {
+
     display: flex;
-    margin: 10px 100px 400px 10px;
+    position: absolute;
+    z-index: -1;
+    margin: 400px 100px 400px 10px;
 }
 
 
