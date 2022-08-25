@@ -6,7 +6,7 @@ body {
 }
 /* screen 1 - Main screen */
 .screen1 {
-    
+
     display: flex;
     margin: -5px;
     /* margin: 10px 300px 0px 380px; */
@@ -14,11 +14,15 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.friends-logo {
+    display: flex;
+    margin-top: -45px;
+}
 .intro {
 
     margin: -50px;
     background-color: rgba(151, 128, 161, 0.3);
-    width: 35vw;
+    width: 45vw;
     padding: 10px;
     font-weight:bold;
 }
