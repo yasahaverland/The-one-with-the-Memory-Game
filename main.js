@@ -24,10 +24,10 @@ this.updateInterface()
 startBtn.addEventListener('click', () => {
 
      if (this.interval === null) {
-        this.start()
+        this.startTimer()
         createBoard()
     } else {
-        this.stop()
+        this.stopTimer()
     } 
 })
    
@@ -39,7 +39,7 @@ function updateInterface() {
     this.el.minutes.innerText = minutes.toString().padStart(2, "0")
     this.el.seconds.innerText = seconds.toString().padStart(2, "0")
 }
-function start() {
+function startTimer() {
 
     if (this.remainingSeconds === 0) return
 
@@ -48,13 +48,13 @@ function start() {
         this.updateInterface()
 
         if (this.remainingSeconds === 0) {
-            this.stop()
+            this.stopTimer()
         }
 
     }, 1000)
 }
 // if timer goes to 0 display (timesup + winner/looser) screen
-function stop() {
+function stopTimer() {
 
         clearInterval(this.interval)
         this.interval = null
@@ -86,59 +86,59 @@ function displayScreens () {
 const cardArray = [
     {
         name: 'monica',
-        img: 'img/Frame 1.png'
+        img: './img/Frame 1.png'
     },
     {
         name:'chandler',
-        img:'img/Frame 2.png'
+        img:'./img/Frame 2.png'
     },
     {
         name:'rachel',
-        img:'img/Frame 3.png'
+        img:'./img/Frame 3.png'
     },
     {
         name:'joey',
-        img:'img/Frame 4.png'
+        img:'./img/Frame 4.png'
     },
     {
         name:'phoebe',
-        img:'img/Frame 6.png'
+        img:'./img/Frame 6.png'
     },
     {
         name:'ross',
-        img:'img/Slice 3.png'
+        img:'./img/Slice 3.png'
     },
     {
         name:'janice',
-        img:'img/Slice 2.png'
+        img:'./img/Slice 2.png'
     },
     {
         name: 'monica',
-        img: 'img/Frame 1.png'
+        img: './img/Frame 1.png'
     },
     {
         name:'chandler',
-        img:'img/Frame 2.png'
+        img:'./img/Frame 2.png'
     },
     {
         name:'rachel',
-        img:'img/Frame 3.png'
+        img:'./img/Frame 3.png'
     },
     {
         name:'joey',
-        img:'img/Frame 4.png'
+        img:'./img/Frame 4.png'
     },
     {
         name:'phoebe',
-        img:'img/Frame 6.png'
+        img:'./img/Frame 6.png'
     },
     {
         name:'ross',
-        img:'img/Slice 3.png'
+        img:'./img/Slice 3.png'
     },
     {
         name:'janice',
-        img:'img/Slice 2.png'
+        img:'./img/Slice 2.png'
     }
 
 ]
@@ -156,7 +156,7 @@ const score = document.querySelector('#result')
 function createBoard () {
     for (let i = 0; i < cardArray.length; i++) {
         const card = document.createElement('img')
-        card.setAttribute('src', 'img/backcard.png')
+        card.setAttribute('src', './img/backcard.png')
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         gridDisplay.append(card)
@@ -168,32 +168,28 @@ function createBoard () {
 function checkMatch() {
 
     const cards = document.querySelectorAll('#grid img')
-    const opitionOneId = cardsChosenIds[0]
-    const opitionTwoId = cardsChosenIds[1]
+    const optionOneId = cardsChosenIds[0]
+    const optionTwoId = cardsChosenIds[1]
 
-    if (opitionOneId == opitionTwoId) {
-        cards[opitionOneId].setAttribute('src', 'img/backcard.png')
-        cards[opitionTwoId].setAttribute('src', 'img/backcard.png')
+    if (optionOneId == optionTwoId) {
+        cards[optionOneId].setAttribute('src', './img/backcard.png')
+        cards[optionTwoId].setAttribute('src', './img/backcard.png')
     }
     if (cardsChosen[0] == cardsChosen[1]) {
         // play sound from the matching cards
-        cards[opitionOneId].setAttribute('src', 'img/blank.png')
-        cards[opitionTwoId].setAttribute('src', 'img/blank.png')
-        cards[opitionOneId].removeEventListener('click', flipCard)
-        cards[opitionTwoId].removeEventListener('click', flipCard)  
+        cards[optionOneId].setAttribute('src', './img/blank.png')
+        cards[optionTwoId].setAttribute('src', './img/blank.png')
+        cards[optionOneId].removeEventListener('click', flipCard)
+        cards[optionTwoId].removeEventListener('click', flipCard)  
         cardsWon.push(cardsChosen)      
     } else {
-        cards[opitionOneId].setAttribute('src', 'img/backcard.png')
-        cards[opitionTwoId].setAttribute('src', 'img/backcard.png')
+        cards[optionOneId].setAttribute('src', './img/backcard.png')
+        cards[optionTwoId].setAttribute('src', './img/backcard.png')
     }
-    
+
     score.innerText = cardsWon.length
     cardsChosen = []
     cardsChosenIds = []
-
-    // if (cardsWon.length == (cardArray.length/2)){
-    //     score.innerText = 'Congratulations! You won the GellerCup!'
-    // }
 
 }
 
@@ -210,10 +206,6 @@ function flipCard() {
     }
     console.log(cardsChosen)
 }
-// confetti
-const confettiSettings = { target: 'my-canvas' };
-const confetti = new ConfettiGenerator(confettiSettings);
-confetti.render();
 
 
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 body {
-    background-image: url("img/brick-wall.jpg");
+    background-image: url("./img/brick-wall.jpg");
     
 }
 /* screen 1 - Main screen */
@@ -130,16 +130,11 @@ audio {
     justify-content: space-around;
     margin: 10px 40px 10px 400px;
 }
-.confetti {
-    display: flex;
-
-}
 
 .win {
 
     display: flex;
     position: absolute;
-    z-index: -1;
     margin: 400px 100px 400px 10px;
 }
 
