@@ -13,38 +13,29 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.intro{
+.intro {
     margin: -50px;
     background-color: rgba(151, 128, 161, 0.3);
-    width: 70vw;
+    width: 35vw;
     padding: 10px;
     font-weight:bold;
 }
 p {
+    
    text-align: center;
    font-family: 'Roboto Mono', monospace;
-   font-size: 30px;
+   font-size: 20px;
    margin: 10px 30px 70px 10px;
 
 }
 .img-door {
-    position: relative;
-    width:50%;
-}
-.img-door .start-btn-s1 {
-    position:absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(131, 109, 175);
-    color: rgb(182, 151, 87);
-    padding: 12px 24px;
-    border-radius: 100px;
-    border: 2px solid rgb(182, 151, 87);
-    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 300px;
 
 }
-
 
 /* screen 2 - actual game screen */
 .screen2 {
