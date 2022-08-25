@@ -20,16 +20,24 @@
             </div>
         </div>
         <div class="screen2">
-            <h3>Score: <span id="result"></span></h3>
-            <div class="timer">
+           
+            <div class="flex-row1">
+                <h3>Score: <span id="result"></span></h3>
                 <button class="timer-btn start">
                 Start
                 </button>
-                <span class="timer-part timer-min">00</span>
-                <span class="timer-part">:</span>
-                <span class="timer-part timer-seconds">00</span>    
+                <div class="timer">
+                    <span class="timer-part timer-min">00</span>
+                    <span class="timer-part">:</span>
+                    <span class="timer-part timer-seconds">00</span>    
+                </div>
             </div>
+            
             <div id="grid"></div>
+            <audio class="friends-audio" loop controls>
+                <source src="img/Friends.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+              </audio>
         </div>
         <div class="screen3">
             <div class="times-up">

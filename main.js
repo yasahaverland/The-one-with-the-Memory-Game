@@ -4,6 +4,7 @@ const screen2 = document.querySelector(".screen2")
 const screen3 = document.querySelector(".screen3")
 const screen4 = document.querySelector(".screen4")
 const door = document.querySelector(".img-door")
+const audio = document.querySelector(".friends-audio")
 
 // Timer Logic
 const minutes = document.querySelector('.timer-min')
@@ -15,7 +16,7 @@ this.el = {
 }
 
 this.interval = null
-this.remainingSeconds = 30
+this.remainingSeconds = 43
 
 this.updateInterface()
 
@@ -24,6 +25,7 @@ startBtn.addEventListener('click', () => {
 
      if (this.interval === null) {
         this.start()
+        createBoard()
     } else {
         this.stop()
     } 
@@ -67,16 +69,19 @@ function stop() {
         }
 
 }
-
+// SWITCH SCREENS logic
 function switchScreens () {
     screen1.setAttribute("style", `display: none`)
     screen2.setAttribute("style", `display: flex`)
+    audio.play()
 }
 displayScreens()
 
 function displayScreens () {
     door.addEventListener("click", switchScreens)
 }
+
+// Board Game logic
 const cardArray = [
     {
         name: 'monica',
@@ -152,12 +157,11 @@ function createBoard () {
         const card = document.createElement('img')
         card.setAttribute('src', 'img/backcard.png')
         card.setAttribute('data-id', i)
-        card.addEventListener('click',flipCard)
+        card.addEventListener('click', flipCard)
         gridDisplay.append(card)
         
     }
 }
-createBoard()
 // checkMatch()
 
 function checkMatch() {
