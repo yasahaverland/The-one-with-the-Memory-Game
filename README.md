@@ -14,6 +14,11 @@ https://yasahaverland.github.io/The-one-with-the-Memory-Game/
 * JavaScript 
     * DOM Manipulation 
 
+## WireFrame
+![WireFrame1](img/start-memorygame.png) 
+![WireFrame2](img/afterclick-memorygame.png) 
+![WireFrame3](img/scoreup-memorygame.png) 
+
 ### Credits 
 All the cards and will and lose stickers were edited by me.
 
