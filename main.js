@@ -5,6 +5,8 @@ const screen3 = document.querySelector(".screen3")
 const screen4 = document.querySelector(".screen4")
 const door = document.querySelector(".img-door")
 const audio = document.querySelector(".friends-audio")
+const resetL = document.querySelector(".reset-button-lose")
+const resetW = document.querySelector('.reset-button-win')
 
 // Timer Logic
 const minutes = document.querySelector('.timer-min')
@@ -146,17 +148,19 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 // referencing the html document (div) I want to append my pictures at
-const gridDisplay = document.querySelector('#grid')
+let gridDisplay = document.querySelector('#grid')
 let cardsChosen = []
 let cardsChosenIds = []
-const cardsWon = []
-const score = document.querySelector('#result')
+let cardsWon = []
+let score = document.querySelector('#result')
+
 
 // create card board and all make the cards imgs appear
 function createBoard () {
     for (let i = 0; i < cardArray.length; i++) {
-        const card = document.createElement('img')
+        let card = document.createElement('img')
         card.setAttribute('src', './img/backcard.png')
+        card.setAttribute('class', 'cards-element')
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         gridDisplay.append(card)
@@ -208,6 +212,16 @@ function flipCard() {
     }
     console.log(cardsChosen)
 }
+function resetGame() {
+    screen4.setAttribute("style", `display: none`)
+    screen3.setAttribute("style", `display: none`)
+    screen1.setAttribute("style", `display: flex`)
+    console.log(gridDisplay)
+    score.innerText = ""
+    gridDisplay.innerHTML = ""
+} 
 
-
+// reset button
+resetL.addEventListener("click", resetGame)
+resetW.addEventListener("click", resetGame)
 
