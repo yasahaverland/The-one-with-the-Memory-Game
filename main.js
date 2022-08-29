@@ -210,15 +210,16 @@ function flipCard() {
     if (cardsChosen.length == 2) {
         setTimeout(checkMatch, 500)
     }
-    console.log(cardsChosen)
 }
+
 function resetGame() {
     screen4.setAttribute("style", `display: none`)
     screen3.setAttribute("style", `display: none`)
     screen1.setAttribute("style", `display: flex`)
-    console.log(gridDisplay)
+    cardsWon = []
     score.innerText = ""
     gridDisplay.innerHTML = ""
+    this.interval = null
 } 
 
 // reset button

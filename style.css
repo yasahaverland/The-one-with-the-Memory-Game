@@ -132,7 +132,7 @@ audio {
     margin: 60px 100px 400px 10px;
 }
 /* Reset button */
-.resetButton {
+.reset-button-lose {
 
     height: 50px;
     width: 100px;
@@ -144,5 +144,16 @@ audio {
     color: rgb(131, 109, 175);
     
 }
+.reset-button-win {
+    height: 50px;
+    width: 100px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+    background-color: rgb(255, 208, 11);
+    color: rgb(131, 109, 175);
+}
+
 
 
